@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 services:
   minio:
@@ -7,7 +7,7 @@ services:
     ports:
       - "9000:9000"
       - "9001:9001"
-    encironment:
+    environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
     command: server /data --console-address ":9001"
@@ -16,7 +16,7 @@ services:
 
   kafka:
     image: apache/kafka:latest
-    containter_name: local_kafka
+    container_name: local_kafka
     ports:
       - "9092:9092"
     environment:
